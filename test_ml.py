@@ -51,8 +51,10 @@ def _small_processed_split(sample_n=2000, test_size=0.2, seed=42):
 # TODO: implement the first test. Change the function name and input as needed
 def test_one():
     """
-    Test that process_data returns arrays with matching row counts and consistent feature dimensions.
+    Test that process_data returns arrays with matching row counts
+    and consistent feature dimensions.
     """
+
     X_train, y_train, X_test, y_test = _small_processed_split()
 
     assert hasattr(X_train, "shape")
