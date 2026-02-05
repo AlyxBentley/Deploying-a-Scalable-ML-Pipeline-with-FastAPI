@@ -1,5 +1,6 @@
-import pickle
 import os
+import pickle
+import numpy as np
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 
@@ -36,8 +37,6 @@ def compute_model_metrics(y, preds):
     recall = recall_score(y, preds, zero_division=1)
     return precision, recall, fbeta
 
-
-import numpy as np
 
 def inference(model, X):
     """

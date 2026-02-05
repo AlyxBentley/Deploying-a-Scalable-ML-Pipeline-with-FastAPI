@@ -1,5 +1,5 @@
+import sys
 import os
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -58,9 +58,9 @@ encoder_path = os.path.join(project_path, "model", "encoder.pkl")
 save_model(encoder, encoder_path)
 
 # load the model
-#model = load_model(
-#    model_path
-#) 
+model = load_model(
+    model_path
+) 
 
 preds = inference(model, X_test)
 
@@ -92,5 +92,5 @@ with open("slice_output.txt", "w") as f:
                 file=f,
             )
 
-import sys
+
 sys.exit(0)
