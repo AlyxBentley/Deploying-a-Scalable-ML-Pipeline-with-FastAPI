@@ -1,12 +1,12 @@
+import json
 import requests
 
 URL = "http://127.0.0.1:8000"
 
-# ---------- GET ----------
+# GET request
 r = requests.get(URL)
 print("Status Code:", r.status_code)
 print("Result:", r.json())
-
 
 data = {
     "age": 37,
@@ -25,7 +25,12 @@ data = {
     "native-country": "United-States",
 }
 
-# ---------- POST ----------
-r = requests.post(f"{URL}/data/", json=data)
+headers = {"Content-Type": "application/json"}
+
+# POST request  ✅ FIXED
+headers = {"X-API-Key": "secret-key-123"}
+r = requests.post(f"{URL}/data/", json=data, headers=headers)
+
 print("Status Code:", r.status_code)
 print("Result:", r.json())
+
